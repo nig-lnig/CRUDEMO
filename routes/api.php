@@ -8,21 +8,13 @@ use App\Http\Controllers\Demo\UpdateDemoController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API REST « classique » — le CRUD tel qu'on l'écrit dans un vrai projet
-|--------------------------------------------------------------------------
-*/
+
 Route::apiResource('products', ProductController::class)
     ->parameters(['products' => 'id'])
     ->middleware('demo.inspect');
 
-/*
-|--------------------------------------------------------------------------
-| Démonstrations pédagogiques — une route par méthode Eloquent (local uniquement)
-|--------------------------------------------------------------------------
-*/
 
+    
 
 Route::prefix('demo')->middleware(['local.only', 'demo.inspect'])->group(function () {
 
@@ -56,9 +48,7 @@ Route::prefix('demo')->middleware(['local.only', 'demo.inspect'])->group(functio
 });
 
 /*
-|--------------------------------------------------------------------------
-| Outils de la présentation (local uniquement, non instrumentés)
-|--------------------------------------------------------------------------
+ Outils de la présentation (local uniquement, non instrumentés)
 */
 Route::prefix('demo')->middleware('local.only')->group(function () {
     Route::post('/reset', [DemoToolsController::class, 'reset']);

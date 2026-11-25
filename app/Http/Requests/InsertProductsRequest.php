@@ -4,10 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-/**
- * Validation d'un lot de produits pour insert().
- * Toutes les lignes doivent avoir exactement les mêmes colonnes.
- */
+/* Validation d'un lot de produits pour insert(). */
 class InsertProductsRequest extends FormRequest
 {
     public function rules(): array

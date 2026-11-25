@@ -10,10 +10,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 
-/**
- * Affiche la présentation. Tout le contenu montré (code, routes, schéma)
- * est lu depuis le projet réel au moment de l'affichage.
- */
+
 class PresentationController extends Controller
 {
     public function __invoke(): View
